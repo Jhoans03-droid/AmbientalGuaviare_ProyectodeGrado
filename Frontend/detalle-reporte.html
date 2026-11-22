@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Detalle del reporte | Ambiental Guaviare</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body class="detail-page">
+
+<!-- ==========================================================
+     NAVBAR
+========================================================== -->
+
+<nav class="navbar detail-navbar">
+
+    <div class="container-fluid detail-navbar-content">
+
+        <a href="dashboard.html" class="navbar-brand detail-brand">
+
+            <span class="detail-brand-icon">
+                <i class="bi bi-tree-fill"></i>
+            </span>
+
+            <span>
+                <strong>Ambiental Guaviare</strong>
+                <small>Plataforma ambiental</small>
+            </span>
+
+        </a>
+
+        <a href="reportes.html" class="detail-back-button">
+
+            <i class="bi bi-arrow-left"></i>
+
+            <span>Volver a reportes</span>
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ==========================================================
+     CONTENIDO
+========================================================== -->
+
+<main class="detail-container">
+
+    <!-- ======================================================
+         ENCABEZADO
+    ======================================================= -->
+
+    <section class="detail-page-header">
+
+        <div>
+
+            <div class="detail-eyebrow">
+                <i class="bi bi-file-earmark-text"></i>
+                DETALLE DEL REPORTE
+            </div>
+
+            <h1>Información del reporte</h1>
+
+            <p>
+                Consulta la información registrada, el estado de gestión,
+                el historial y las evidencias asociadas.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         INFORMACIÓN PRINCIPAL
+    ======================================================= -->
+
+    <section id="detalle" class="detail-main-card">
+        <!-- detalle.js inserta aquí la información -->
+    </section>
+
+
+    <!-- ======================================================
+         HISTORIAL + EVIDENCIAS
+    ======================================================= -->
+
+    <div class="detail-grid">
+
+
+        <!-- HISTORIAL -->
+
+        <section class="detail-card">
+
+            <div class="detail-card-header">
+
+                <div class="detail-card-title">
+
+                    <div class="detail-section-icon">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>Historial de seguimiento</h2>
+
+                        <p>
+                            Registro de las actualizaciones realizadas
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="detail-card-body">
+
+                <div id="historial">
+                    <!-- detalle.js -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- EVIDENCIAS -->
+
+        <section class="detail-card">
+
+            <div class="detail-card-header">
+
+                <div class="detail-card-title">
+
+                    <div class="detail-section-icon">
+                        <i class="bi bi-images"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>Evidencias fotográficas</h2>
+
+                        <p>
+                            Imágenes asociadas al reporte
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="detail-card-body">
+
+                <div id="evidencias" class="row g-3">
+                    <!-- detalle.js -->
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ======================================================
+         PANEL DE GESTIÓN
+    ======================================================= -->
+
+    <section
+        id="panelGestion"
+        class="detail-management-card"
+        hidden>
+
+        <div class="detail-management-header">
+
+            <div class="detail-management-icon">
+                <i class="bi bi-shield-check"></i>
+            </div>
+
+            <div>
+
+                <h2>Gestión del reporte</h2>
+
+                <p>
+                    Actualiza el estado y registra las observaciones
+                    correspondientes al proceso de revisión.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-management-body">
+
+            <div class="row g-4">
+
+                <!-- ESTADO -->
+
+                <div class="col-lg-5">
+
+                    <label for="nuevoEstado" class="form-label">
+                        Nuevo estado
+                    </label>
+
+                    <select
+                        id="nuevoEstado"
+                        class="form-select">
+
+                        <option value="EN_REVISION">
+                            En revisión
+                        </option>
+
+                        <option value="INFORMACION_COMPLEMENTARIA">
+                            Solicitar información
+                        </option>
+
+                        <option value="VERIFICADO">
+                            Verificado
+                        </option>
+
+                        <option value="CERRADO">
+                            Cerrado
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- OBSERVACIÓN -->
+
+                <div class="col-lg-7">
+
+                    <label for="observacion" class="form-label">
+                        Observación
+                    </label>
+
+                    <textarea
+                        id="observacion"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Escribe una observación relacionada con la actualización..."></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="detail-action-row">
+
+                <button
+                    id="btnEstado"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-check2-circle"></i>
+
+                    Guardar actualización
+
+                </button>
+
+            </div>
+
+
+            <div class="detail-divider"></div>
+
+
+            <!-- SOLICITUD -->
+
+            <div class="detail-request-section">
+
+                <div class="detail-request-title">
+
+                    <div class="detail-request-icon">
+                        <i class="bi bi-chat-left-text"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>Solicitar información complementaria</h3>
+
+                        <p>
+                            Utiliza esta opción cuando sea necesario
+                            solicitar información adicional al ciudadano.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label
+                    for="solicitudTexto"
+                    class="form-label">
+
+                    Información requerida
+
+                </label>
+
+                <textarea
+                    id="solicitudTexto"
+                    class="form-control mb-3"
+                    rows="4"
+                    placeholder="Indica claramente qué información se requiere..."></textarea>
+
+
+                <button
+                    id="btnSolicitud"
+                    class="btn btn-warning">
+
+                    <i class="bi bi-send"></i>
+
+                    Enviar solicitud
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PANEL CIUDADANO
+    ======================================================= -->
+
+    <section
+        id="panelCiudadano"
+        class="detail-card citizen-request-card"
+        hidden>
+
+        <div class="detail-card-header">
+
+            <div class="detail-card-title">
+
+                <div class="detail-section-icon warning">
+                    <i class="bi bi-chat-square-text"></i>
+                </div>
+
+                <div>
+
+                    <h2>Solicitudes de información</h2>
+
+                    <p>
+                        Consulta las solicitudes realizadas sobre este reporte
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="detail-card-body">
+
+            <div id="solicitudes">
+                <!-- detalle.js -->
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         MENSAJES
+    ======================================================= -->
+
+    <div id="mensaje" class="detail-message"></div>
+
+</main>
+
+<!-- MODAL PARA VISUALIZAR EL SOPORTE -->
+<div class="modal fade" id="modalSoporte" tabindex="-1"
+     aria-labelledby="modalSoporteLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+
+        <div class="modal-content soporte-modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <h5 class="modal-title" id="modalSoporteLabel">
+                        <i class="bi bi-image me-2"></i>
+                        Soporte del reporte
+                    </h5>
+
+                    <small class="text-muted">
+                        Imagen adjuntada por el ciudadano
+                    </small>
+                </div>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar">
+                </button>
+
+            </div>
+
+            <div class="modal-body text-center">
+
+                <img
+                    id="imagenSoporte"
+                    src=""
+                    alt="Soporte del reporte"
+                    class="img-fluid soporte-imagen">
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Cerrar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     SCRIPTS
+========================================================== -->
+<!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/api.js"></script>
+<script src="js/detalle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ambiental Guaviare | Reporte de novedades ambientales</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     NAVBAR
+========================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+
+            <span class="brand-icon">
+                <i class="bi bi-tree-fill"></i>
+            </span>
+
+            <span>Ambiental Guaviare</span>
+
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarPrincipal">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarPrincipal">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="reportar.html">
+                        Reportar
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#como-funciona">
+                        ¿Cómo funciona?
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#interes">
+                        Información ambiental
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-light btn-sm"
+                       href="login.html">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>
+                        Iniciar sesión
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-register btn-sm"
+                        href="registro.html"> Registrarse
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<header class="home-hero">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="hero-badge">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    Guaviare · Colombia
+                </span>
+
+                <h1 class="hero-title">
+                    Cuidar nuestro territorio
+                    <span>también es reportar.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Reporta situaciones que puedan afectar el ambiente
+                    de nuestro territorio y contribuye a generar
+                    información para su seguimiento y atención.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="reportar.html"
+                       class="btn btn-success btn-lg">
+
+                        <i class="bi bi-megaphone-fill me-2"></i>
+
+                        Registrar un reporte
+
+                    </a>
+
+                    <a href="#como-funciona"
+                       class="btn btn-outline-light btn-lg">
+
+                        <i class="bi bi-arrow-down-circle me-2"></i>
+
+                        Conocer cómo funciona
+
+                    </a>
+
+                </div>
+
+                <div class="hero-info">
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Reporte georreferenciado
+                    </div>
+
+                    <div>
+                        <i class="bi bi-image-fill"></i>
+                        Adjunta evidencias
+                    </div>
+
+                    <div>
+                        <i class="bi bi-graph-up-arrow"></i>
+                        Consulta el seguimiento
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-block">
+
+                <div class="hero-panel">
+
+                    <div class="hero-panel-icon">
+                        <i class="bi bi-globe-americas"></i>
+                    </div>
+
+                    <h3>
+                        Tu información ayuda
+                    </h3>
+
+                    <p>
+                        Una novedad ambiental reportada oportunamente
+                        puede contribuir a identificar situaciones,
+                        organizar información territorial y facilitar
+                        su seguimiento.
+                    </p>
+
+                    <div class="hero-panel-divider"></div>
+
+                    <div class="hero-panel-item">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        <div>
+                            <strong>Ubicación</strong>
+                            <span>Identifica dónde ocurre la situación.</span>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-panel-item">
+
+                        <i class="bi bi-camera"></i>
+
+                        <div>
+                            <strong>Evidencia</strong>
+                            <span>Agrega fotografías u otros soportes.</span>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-panel-item">
+
+                        <i class="bi bi-clock-history"></i>
+
+                        <div>
+                            <strong>Seguimiento</strong>
+                            <span>Consulta el estado de tu reporte.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================================
+     BARRA DE INFORMACIÓN
+========================================================== -->
+
+<section class="quick-info">
+
+    <div class="container">
+
+        <div class="row g-0">
+
+            <div class="col-md-4">
+
+                <div class="quick-info-item">
+
+                    <div class="quick-info-icon">
+                        <i class="bi bi-pin-map-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Información territorial</strong>
+
+                        <span>
+                            Ubica la novedad donde realmente ocurre.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="quick-info-item">
+
+                    <div class="quick-info-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Información organizada</strong>
+
+                        <span>
+                            Los reportes permiten consolidar información.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="quick-info-item">
+
+                    <div class="quick-info-icon">
+                        <i class="bi bi-arrow-repeat"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Seguimiento</strong>
+
+                        <span>
+                            Consulta la evolución de los reportes registrados.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     ¿QUÉ PUEDES REPORTAR?
+========================================================== -->
+
+<section class="home-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-kicker">
+                REPORTES AMBIENTALES
+            </span>
+
+            <h2>
+                ¿Qué situaciones puedes reportar?
+            </h2>
+
+            <p>
+                Registra información sobre situaciones que puedan
+                representar una afectación o novedad ambiental
+                en tu territorio.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="interest-card">
+
+                    <div class="interest-icon forest">
+                        <i class="bi bi-tree-fill"></i>
+                    </div>
+
+                    <h3>
+                        Deforestación
+                    </h3>
+
+                    <p>
+                        Reporta posibles actividades de tala,
+                        pérdida de cobertura vegetal o afectaciones
+                        a zonas boscosas.
+                    </p>
+
+                    <a href="reportar.html">
+                        Reportar situación
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="interest-card">
+
+                    <div class="interest-icon water">
+                        <i class="bi bi-droplet-fill"></i>
+                    </div>
+
+                    <h3>
+                        Fuentes hídricas
+                    </h3>
+
+                    <p>
+                        Informa sobre situaciones relacionadas con
+                        ríos, caños, quebradas, humedales u otras
+                        fuentes de agua.
+                    </p>
+
+                    <a href="reportar.html">
+                        Reportar situación
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="interest-card">
+
+                    <div class="interest-icon waste">
+                        <i class="bi bi-trash3-fill"></i>
+                    </div>
+
+                    <h3>
+                        Residuos y contaminación
+                    </h3>
+
+                    <p>
+                        Reporta acumulación inadecuada de residuos,
+                        vertimientos o situaciones que puedan afectar
+                        el entorno.
+                    </p>
+
+                    <a href="reportar.html">
+                        Reportar situación
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="interest-card">
+
+                    <div class="interest-icon wildlife">
+                        <i class="bi bi-feather"></i>
+                    </div>
+
+                    <h3>
+                        Fauna y flora
+                    </h3>
+
+                    <p>
+                        Informa sobre posibles afectaciones a especies
+                        de fauna, flora o ecosistemas presentes
+                        en el territorio.
+                    </p>
+
+                    <a href="reportar.html">
+                        Reportar situación
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     BLOQUE DESTACADO
+========================================================== -->
+
+<section class="environment-section">
+
+    <div class="container">
+
+        <div class="environment-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <span class="section-kicker light">
+                        PARTICIPACIÓN CIUDADANA
+                    </span>
+
+                    <h2>
+                        El territorio también se conoce
+                        desde quienes lo habitan.
+                    </h2>
+
+                    <p>
+                        Las personas que viven, trabajan y recorren
+                        el territorio pueden aportar información
+                        importante sobre situaciones ambientales
+                        que requieren atención o seguimiento.
+                    </p>
+
+                    <a href="reportar.html"
+                       class="btn btn-light">
+
+                        <i class="bi bi-send-fill me-2"></i>
+
+                        Quiero realizar un reporte
+
+                    </a>
+
+                </div>
+
+                <div class="col-lg-5">
+
+                    <div class="environment-stat">
+
+                        <div class="environment-stat-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Participa
+                            </strong>
+
+                            <span>
+                                Aporta información de manera
+                                responsable y clara.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="environment-stat">
+
+                        <div class="environment-stat-icon">
+                            <i class="bi bi-map-fill"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Georreferencia
+                            </strong>
+
+                            <span>
+                                Indica el lugar donde ocurre
+                                la novedad.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="environment-stat">
+
+                        <div class="environment-stat-icon">
+                            <i class="bi bi-clipboard-check-fill"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Haz seguimiento
+                            </strong>
+
+                            <span>
+                                Consulta la evolución de la información
+                                registrada.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     CÓMO FUNCIONA
+========================================================== -->
+
+<section id="como-funciona"
+         class="home-section how-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-kicker">
+                PROCESO
+            </span>
+
+            <h2>
+                ¿Cómo funciona un reporte?
+            </h2>
+
+            <p>
+                El proceso está pensado para facilitar el registro
+                y consulta de las novedades ambientales.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-pencil-square"></i>
+                </div>
+
+                <h3>
+                    Registra
+                </h3>
+
+                <p>
+                    Describe la situación ambiental que
+                    deseas informar.
+                </p>
+
+            </div>
+
+
+            <div class="process-line"></div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </div>
+
+                <h3>
+                    Ubica
+                </h3>
+
+                <p>
+                    Señala en el mapa el lugar donde
+                    ocurre la situación.
+                </p>
+
+            </div>
+
+
+            <div class="process-line"></div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-camera-fill"></i>
+                </div>
+
+                <h3>
+                    Aporta evidencia
+                </h3>
+
+                <p>
+                    Adjunta fotografías u otros soportes
+                    cuando estén disponibles.
+                </p>
+
+            </div>
+
+
+            <div class="process-line"></div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-search"></i>
+                </div>
+
+                <h3>
+                    Consulta
+                </h3>
+
+                <p>
+                    Realiza seguimiento al estado de
+                    la información registrada.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     INFORMACIÓN DE INTERÉS
+========================================================== -->
+
+<section id="interes"
+         class="interest-section">
+
+    <div class="container">
+
+        <div class="row align-items-start g-5">
+
+            <div class="col-lg-5">
+
+                <span class="section-kicker">
+                    INFORMACIÓN DE INTERÉS
+                </span>
+
+                <h2>
+                    Conoce mejor el territorio
+                </h2>
+
+                <p>
+                    El seguimiento de las situaciones ambientales
+                    requiere información organizada, ubicación
+                    territorial y participación de diferentes actores.
+                </p>
+
+                <div class="info-note">
+
+                    <i class="bi bi-info-circle-fill"></i>
+
+                    <div>
+
+                        <strong>
+                            ¿Por qué es importante reportar?
+                        </strong>
+
+                        <p>
+                            Un reporte proporciona información sobre
+                            una situación observada. La información
+                            registrada puede facilitar su clasificación,
+                            seguimiento y consulta dentro de la plataforma.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-7">
+
+                <div class="interest-list">
+
+                    <div class="interest-list-item">
+
+                        <div class="interest-list-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Conservación de los bosques
+                            </h3>
+
+                            <p>
+                                Los bosques cumplen funciones esenciales
+                                para los ecosistemas, el suelo, el agua
+                                y la biodiversidad del territorio.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="interest-list-item">
+
+                        <div class="interest-list-icon">
+                            <i class="bi bi-water"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Protección del recurso hídrico
+                            </h3>
+
+                            <p>
+                                La identificación oportuna de situaciones
+                                que afectan fuentes hídricas permite
+                                disponer de información para su seguimiento.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="interest-list-item">
+
+                        <div class="interest-list-icon">
+                            <i class="bi bi-bug"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Biodiversidad
+                            </h3>
+
+                            <p>
+                                La fauna y la flora forman parte de la
+                                riqueza natural del territorio y requieren
+                                información que contribuya a su protección.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="interest-list-item">
+
+                        <div class="interest-list-icon">
+                            <i class="bi bi-recycle"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Manejo adecuado de residuos
+                            </h3>
+
+                            <p>
+                                La disposición inadecuada de residuos
+                                puede generar impactos sobre el suelo,
+                                el agua y los ecosistemas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     RECOMENDACIONES PARA REPORTAR
+========================================================== -->
+
+<section class="tips-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-kicker">
+                ANTES DE REPORTAR
+            </span>
+
+            <h2>
+                Recomendaciones para realizar un buen reporte
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="tip-card">
+
+                    <div class="tip-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Describe lo observado
+                    </h3>
+
+                    <p>
+                        Explica de manera clara qué ocurrió,
+                        qué observaste y, cuando sea posible,
+                        cuándo ocurrió.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="tip-card">
+
+                    <div class="tip-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Indica la ubicación
+                    </h3>
+
+                    <p>
+                        Selecciona en el mapa el punto más cercano
+                        posible al lugar donde se presenta la
+                        situación.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="tip-card">
+
+                    <div class="tip-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Adjunta evidencia
+                    </h3>
+
+                    <p>
+                        Si cuentas con fotografías u otros soportes,
+                        puedes adjuntarlos para complementar
+                        la información.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     CTA FINAL
+========================================================== -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="final-cta-content text-center">
+
+            <div class="final-cta-icon">
+                <i class="bi bi-megaphone-fill"></i>
+            </div>
+
+            <h2>
+                ¿Identificaste una novedad ambiental?
+            </h2>
+
+            <p>
+                Registra la información y contribuye al conocimiento
+                y seguimiento de las situaciones ambientales del territorio.
+            </p>
+
+            <a href="reportar.html"
+               class="btn btn-success btn-lg">
+
+                <i class="bi bi-plus-circle-fill me-2"></i>
+
+                Registrar reporte
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+
+                <div class="footer-brand">
+
+                    <div class="footer-logo">
+                        <i class="bi bi-tree-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Ambiental Guaviare
+                        </h3>
+
+                        <p>
+                            Plataforma para el registro y seguimiento
+                            de novedades ambientales del territorio.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <h4>
+                    Plataforma
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reportar.html">
+                            Registrar reporte
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="login.html">
+                            Iniciar sesión
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="registro.html">
+                            Crear cuenta
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4>Recomendación</h4>
+
+                <p class="footer-text">
+                    Utiliza la plataforma para registrar información
+                    clara, verificable y relacionada con situaciones
+                    ambientales observadas en el territorio.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                © 2026 Ambiental Guaviare
+            </span>
+            <span>
+                Plataforma de reporte y seguimiento ambiental
+            </span>
+        </div>
+    </div>
+
+</footer>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+
+</html>
